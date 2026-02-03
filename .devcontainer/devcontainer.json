@@ -1,0 +1,10 @@
+{
+  "name": "Python GCP Project",
+  "containerEnv": {
+    "GOOGLE_APPLICATION_CREDENTIALS": "/tmp/gcp-key.json"
+  },
+  "remoteEnv": {
+    "GCP_SA_KEY": "${localEnv:GCP_SA_KEY}"
+  },
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
+}
