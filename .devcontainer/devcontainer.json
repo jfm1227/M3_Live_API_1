@@ -1,8 +1,9 @@
 {
   "name": "Python GCP Project",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11", // Pythonイメージを指定
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "features": {
-    "ghcr.io/devcontainers/features/google-cloud-cli:0": {} // これを追加！
+    // バージョン指定を ":1" または最新にするために空オブジェクトにする
+    "ghcr.io/devcontainers/features/google-cloud-cli:1": {}
   },
   "containerEnv": {
     "GOOGLE_APPLICATION_CREDENTIALS": "/tmp/gcp-key.json"
