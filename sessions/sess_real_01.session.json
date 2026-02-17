@@ -1,0 +1,11 @@
+{
+  "schema_version": "session_runtime_v0.1",
+  "session_id": "sess_real_01",
+  "session_audio_ms": 36040,
+
+  "pose_timeline": "timelines/pose/pose_timeline_m0_wrapper_leaning3.json",
+  "mouth_timeline": "timelines/mouth/1_2_1.mouth_timeline.knn.i.json",
+  "expression_timeline": "timelines/expression/sess_real_01.expression_timeline.json",
+
+  "audio": "audio/1_2_1.wav"
+}

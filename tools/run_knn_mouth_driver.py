@@ -23,7 +23,7 @@ def main():
 
     # repo-relative defaults（現状の配置に合わせて固定）
     ap.add_argument("--raw_dir", default="out/live_pseudo")
-    ap.add_argument("--gt_glob", default="out/knn_data/train/*.f1f2.json")
+    ap.add_argument("--gt_glob", default="data/knn_db/*.f1f2.json")
     ap.add_argument("--wav_dir", default="mnt/data")
     ap.add_argument("--out_dir", default="out/knn_mouth")
 

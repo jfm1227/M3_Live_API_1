@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 # tools/step0_knn_compare.py
+
+import os, sys
+
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
 import argparse
 import json
 from typing import Any, Dict, List, Tuple
@@ -70,14 +77,20 @@ def main() -> None:
     if not isinstance(frames, list):
         raise SystemExit("[ERROR] invalid frames in in_json")
 
-    # 1) i挿入（結合後一括）
-    inserted_frames = insert_intermediate_i(
-        frames,
+    import copy
+
+    # 1) i挿入（結合後一括）: insert_intermediate_i は in-place 書き換え & 戻り値は changed_count(int)
+    frames_i = copy.deepcopy(frames)
+    changed_i = insert_intermediate_i(
+        frames_i,
         step_ms=step_ms,
         min_run_ms=args.min_run_ms,
         interval_ms=args.interval_ms,
         max_i_per_run=args.max_i_per_run,
     )
+    inserted_frames = frames_i
+
+    print(f"[i-insert] changed frames -> mouth_id=2: {changed_i}")
 
     out_obj: Dict[str, Any] = dict(src)
     out_obj["frames"] = inserted_frames

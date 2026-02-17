@@ -74,7 +74,7 @@ def _predict_knn(
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", required=True, help="input: *.mouth_timeline.formant.raw.json")
-    ap.add_argument("--gt_glob", default="out/knn_data/train/*.f1f2.json", help="kNN db glob")
+    ap.add_argument("--gt_glob", default="data/knn_db/*.f1f2.json", help="kNN db glob")
     ap.add_argument("--out", required=True, help="output mouth_timeline.json")
     ap.add_argument("--audio", default=None, help="optional wav path to write into output json")
     ap.add_argument("--step_ms", type=int, default=40)
